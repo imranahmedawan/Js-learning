@@ -27,5 +27,27 @@ let myObj = {
     name:"Imran Ahmed",
     age: 41
 }
-console.log(heros);
-console.log(typeof myObj);
+// console.log(heros);
+// console.log(myObj);
+// console.log(typeof myObj);
+
+// two types of Memory used in javascript
+// stack (primitive), 2- Heap memory (Non_primitive)
+//Stack momery used we get copy and when heap memory used we get reference 
+
+let myYoutubeChannel ="myYoutubeChanneelName";
+
+let anotherName = myYoutubeChannel;
+anotherName="anotherNameString";
+console.log(myYoutubeChannel);
+console.log(anotherName);
+
+let user ={
+name:"Imran Ahmed Awan",
+email:"imranmcs@gmail.com",
+PhoneNo:"03217348557"
+}
+let user2 = user;
+user2.email = "eocp1122@gmail.com";
+console.log(user);
+console.log(user2);
