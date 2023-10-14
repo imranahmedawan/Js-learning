@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Chai Aur Javascript</h1>
+    <button id = 'start'>Start</button>
+    <button id = 'stop'>Stop</button>
+</body>
+<script>
+    //================== setInterval with two parameteres
+//     const sayDate = function(){
+//     console.log("Imran", Date.now());
+//  }
+//  setInterval(sayDate,1000)
+
+//===================== setInterval with 3 parameters
+// const sayDate = function(name){
+//     console.log(name, Date.now());
+//  }
+//  setInterval(sayDate,1000, "Imran Ahmed Awan")
+
+
+
+//======================= clearInterval
+// name not printed because just after setinterval, we execute the clearInterval() function that stopped the Interval function 
+// const sayDate = function(name){
+//     console.log(name, Date.now());
+//  }
+//  const intervalId = setInterval(sayDate,1000, "Imran Ahmed Awan")
+//  clearInterval(intervalId)
+
+
+
+ //======================= clearInterval
+// setInterval and clearInterval on start and stop buttons
+
+let intervalId;
+document.getElementById("start").addEventListener("click", function(){
+    const sayDate = function(name){
+    console.log(name, Date.now());
+ }
+ intervalId = setInterval(sayDate,1000, "Imran Ahmed Awan")
+});
+
+
+document.getElementById("stop").addEventListener("click", function(){
+    clearInterval(intervalId)
+});
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Chai Aur Code</h1>
+    <button id = 'stop'>Stop</button>
+</body>
+<script>
+    // setTimeout(function (){
+    //     console.log("Imran Ahmed Awan");
+    // },2000);
+
+    // setInterval(function (){
+    //     console.log("Imran Ahmed Awan");
+    // },2000);
+
+    // const printName = function (){
+    //      console.log("Imran Ahmed Awan");
+    //  }
+    //  setTimeout(printName, 2000);
+
+    //================== Change main heading ==========
+    const changeHeading = function (){
+    document.querySelector("h1").innerHTML = "The best Javascript series";
+    }
+    const changeMe = setTimeout(changeHeading, 3000);
+
+    document.querySelector("#stop").addEventListener("click", function(){
+        clearTimeout(changeMe);
+        console.log("Set Time out Operation for heading change stopped");
+    })
+
+</script>
+</html>
