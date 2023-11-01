@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body style="background-color: #212121; color: white;">
-    <script>
+    <!-- <script>
         const xhr = new XMLHttpRequest();
         const requestURL ="https://randomuser.me/api/";
         xhr.open("GET", requestURL)        
@@ -28,7 +28,7 @@
                 document.body.appendChild(div);
             }
         }   
-    </script>
+    </script> -->
     <!-- <script>
         const xhr1 = new XMLHttpRequest();
         const apiURL1 = "https://randomuser.me/api/"
@@ -45,7 +45,7 @@ xhr1.send();
 
     </script> -->
 
-    <script>
+    <!-- <script>
         const xhr2 = new XMLHttpRequest();
         const URL = "https://randomuser.me/api/?results=5";
         xhr2.open("get", URL);
@@ -53,6 +53,7 @@ xhr1.send();
             if(xhr2.readyState===4)
             {
                 const data2 = JSON.parse( this.responseText);
+                console.log(this.responseText);
                 console.log(data2.info.results, "results");
                 for(i=0;i<data2.info.results;i++)
                 {
@@ -64,6 +65,33 @@ xhr1.send();
                     </div>`
                     document.body.appendChild(div);
                 }
+            }
+        }
+        xhr2.send();
+    </script> -->
+    <script>
+        const xhr2 = new XMLHttpRequest();
+        const URL = "http://192.168.0.220/r1api/api/districts";
+        //const URL = "https://localhost/api/api/districts";
+        
+        xhr2.open("get", URL);
+        xhr2.onreadystatechange = function(){
+            if(xhr2.readyState===4)
+            {
+                console.log(this.responseText);
+                const data2 = JSON.parse( this.responseText);
+                //console.log(this.responseText);
+                //console.log(data2.info.results, "results");
+                // for(i=0;i<data2.info.results;i++)
+                // {
+                // const div = document.createElement("div")
+                // div.innerHTML = `<div id = 'card1'>
+                //     <image src="${data2.results[i].picture.large}" style="width:300px;height:300px;"/>
+                //     <br />
+                //     Name: ${data2.results[i].name.title}  ${data2.results[i].name.first}  ${data2.results[i].name.last}
+                //     </div>`
+                //     document.body.appendChild(div);
+                // }
             }
         }
         xhr2.send();
