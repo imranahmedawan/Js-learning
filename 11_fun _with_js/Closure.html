@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+    </body>
+<script>
+// Lexical SCoping Line 14- 27
+
+    // function init(){
+    //     var name = "Mozila";
+
+    //     function displayName(){
+    //     console.log(name);
+    //         function Name2()
+    //         {
+    //             console.log(`function name2 ${name}`);
+    //         }
+    //         Name2();
+    //     }
+    //     displayName();
+    // }
+    // init();
+
+// Closure line 31 - 41
+
+// function makeFUnc()
+// {
+//     const name = "Mozilla";
+//     function displayName(){
+//         console.log(name);
+//     }
+//     return displayName
+// }
+
+// const myFunc = makeFUnc();
+// myFunc();
+</script>
+
+<script>
+    //document.getElementById("orange").onclick=function(){
+        //document.body.style.backgroundColor="orange"
+    //}
+    // abc();
+    // function abc()
+    // {
+    //     var xyz ="zxczx"
+    // }
+    function clickHandler(color)
+    {
+        //document.body.style.backgroundColor=`${color}`
+        return function(){
+        document.body.style.backgroundColor=`${color}`
+    }
+}
+    document.getElementById('orange').onclick = clickHandler("orange")
+    document.getElementById('green').onclick = clickHandler("green")
+</script>
+</html>
